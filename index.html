@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Project Nexus</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Script required for the advanced responsive navigation elements (dialog, popover) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
@@ -15,7 +14,6 @@
             max-width: 1200px;
             margin: auto;
             overflow: hidden;
-            /* Ensures smooth GPU-accelerated transition */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         .slide {
@@ -44,8 +42,9 @@
             display: inline-block;
             transition: background-color 0.6s ease;
         }
+        /* Updated color to #FFBE98 */
         .active-dot, .dot:hover {
-            background-color: #4f46e5; /* indigo-600 */
+            background-color: #FFBE98; 
         }
         
         /* Message Box Styling for non-alert messages */
@@ -69,15 +68,16 @@
     <!-- Message Box Element -->
     <div id="messageBox" class="message-box"></div>
 
-    <!-- New Responsive Header & Navigation -->
-    <header class="bg-white shadow-md">
+    <!-- Responsive Header (NO SHADOW, LARGER FONT) -->
+    <header class="bg-white">
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         
         <!-- Logo -->
         <div class="flex lg:flex-1">
           <a href="index.html" class="-m-1.5 p-1.5">
             <span class="sr-only">Project Nexus</span>
-            <img src="images/logo.png" alt="Project Nexus Logo" class="h-8 w-auto" />
+            <!-- Placeholder logo, replace with your 'images/logo.png' -->
+            <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
           </a>
         </div>
         
@@ -93,21 +93,22 @@
         
         <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="index.html" class="text-sm/6 font-semibold text-indigo-600">Home</a>
-          <a href="about.html" class="text-sm/6 font-semibold text-gray-900 hover:text-indigo-600">About Us</a>
-          <a href="activities.html" class="text-sm/6 font-semibold text-gray-900 hover:text-indigo-600">Activities</a>
-          <a href="press.html" class="text-sm/6 font-semibold text-gray-900 hover:text-indigo-600">Press/Publications</a>
+          <!-- Active Link -->
+          <a href="index.html" class="text-base/6 font-semibold text-[#FFBE98] hover:text-[#E8A982]">Home</a>
+          <a href="about.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">About Us</a>
+          <a href="activities.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Activities</a>
+          <a href="press.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Press/Publications</a>
         </div>
         
         <!-- Contact Button on Desktop -->
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="contact.html" class="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-indigo-700 transition duration-150">
+          <a href="contact.html" class="rounded-full bg-[#FFBE98] px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-[#E8A982] transition duration-150">
             Contact Us
           </a>
         </div>
       </nav>
 
-      <!-- Mobile Dialog Menu (Hidden by default, shown when the hamburger button is clicked) -->
+      <!-- Mobile Dialog Menu -->
       <el-dialog>
         <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
           <div tabindex="0" class="fixed inset-0 focus:outline-none">
@@ -115,7 +116,8 @@
               <div class="flex items-center justify-between">
                 <a href="index.html" class="-m-1.5 p-1.5">
                   <span class="sr-only">Project Nexus</span>
-                  <img src="images/logo.png" alt="Project Nexus Logo" class="h-8 w-auto" />
+                  <!-- Placeholder logo, replace with your 'images/logo.png' -->
+                  <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
                 </a>
                 <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
                   <span class="sr-only">Close menu</span>
@@ -128,13 +130,13 @@
                 <div class="-my-6 divide-y divide-gray-500/10">
                   <div class="space-y-2 py-6">
                     <!-- Mobile Links -->
-                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FFBE98] hover:bg-gray-50">Home</a>
                     <a href="about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About Us</a>
                     <a href="activities.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Activities</a>
                     <a href="press.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Press/Publications</a>
                   </div>
                   <div class="py-6">
-                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-indigo-600 hover:bg-gray-50">Contact Us</a>
+                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
                   </div>
                 </div>
               </div>
@@ -148,12 +150,12 @@
     <main class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-                Pioneering the Future of <span class="text-indigo-600">Sustainable Innovation</span>
+                Pioneering the Future of <span class="text-[#FFBE98]">Sustainable Innovation</span>
             </h1>
             <p class="text-xl text-gray-500 max-w-3xl mx-auto mb-10">
                 We bridge research and real-world application, driving meaningful change through collaboration and expert insights.
             </p>
-            <a href="about.html" class="inline-block px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+            <a href="about.html" class="inline-block px-8 py-3 bg-[#FFBE98] text-white text-lg font-medium rounded-full shadow-lg hover:bg-[#E8A982] transition duration-300 transform hover:scale-105">
                 Discover Our Mission
             </a>
             
@@ -163,17 +165,17 @@
                     
                     <!-- Slide 1: Simulating /images/showcase/slide1.jpg -->
                     <div class="slide fade" data-slide-index="0">
-                        <img src="https://placehold.co/1200x500/A78BFA/FFFFFF?text=images/showcase/slide1.jpg+-+Global+Research" alt="Global Research Project">
+                        <img src="https://placehold.co/1200x500/A78BFA/FFFFFF?text=images/showcase/slide1.jpg+-+Global+Research" alt="Global Research Project" onerror="this.onerror=null; this.src='https://placehold.co/1200x500/A78BFA/FFFFFF?text=Slide+1+Placeholder';">
                     </div>
 
                     <!-- Slide 2: Simulating /images/showcase/slide2.jpg -->
                     <div class="slide fade" data-slide-index="1">
-                        <img src="https://placehold.co/1200x500/4F46E5/FFFFFF?text=images/showcase/slide2.jpg+-+Team+Collaboration" alt="Team Collaboration">
+                        <img src="https://placehold.co/1200x500/4F46E5/FFFFFF?text=images/showcase/slide2.jpg+-+Team+Collaboration" alt="Team Collaboration" onerror="this.onerror=null; this.src='https://placehold.co/1200x500/4F46E5/FFFFFF?text=Slide+2+Placeholder';">
                     </div>
 
                     <!-- Slide 3: Simulating /images/showcase/slide3.jpg -->
                     <div class="slide fade" data-slide-index="2">
-                        <img src="https://placehold.co/1200x500/6366F1/FFFFFF?text=images/showcase/slide3.jpg+-+Future+Technology" alt="Future Technology Showcase">
+                        <img src="https://placehold.co/1200x500/6366F1/FFFFFF?text=images/showcase/slide3.jpg+-+Future+Technology" alt="Future Technology Showcase" onerror="this.onerror=null; this.src='https://placehold.co/1200x500/6366F1/FFFFFF?text=Slide+3+Placeholder';">
                     </div>
                 </div>
 
@@ -190,7 +192,7 @@
     <!-- Footer -->
     <footer class="bg-white mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 Project Nexus. All rights reserved. | <a href="contact.html" class="text-indigo-600 hover:underline">Get in Touch</a></p>
+            <p>&copy; 2025 Project Nexus. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>
         </div>
     </footer>
 
@@ -217,7 +219,7 @@
             
             // Check if slides exist
             if (slides.length === 0) {
-                showMessage("Error: Slideshow elements not found.");
+                // No error message needed, just exit if nothing to show
                 return;
             }
 

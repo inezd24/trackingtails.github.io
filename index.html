@@ -3,11 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Tracking Tails</title>
+    <title>Home - Project Nexus</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Slideshow specific CSS */
+        .slideshow-container {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            /* Ensures smooth GPU-accelerated transition */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .slide {
+            display: none; /* Initially hide all slides */
+            width: 100%;
+            transition: opacity 1.5s ease;
+        }
+        .slide img {
+            width: 100%;
+            height: 500px; /* Fixed height for consistency */
+            object-fit: cover;
+        }
+        
+        /* Navigation Dots (Indicators) */
+        .dot-container {
+            text-align: center;
+            padding: 16px 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #cbd5e1; /* slate-300 */
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active-dot, .dot:hover {
+            background-color: #4f46e5; /* indigo-600 */
+        }
+        
+        /* Message Box Styling for non-alert messages */
+        .message-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #10b981; /* emerald-500 */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+
+    <!-- Message Box Element -->
+    <div id="messageBox" class="message-box"></div>
 
     <!-- Header & Navigation -->
     <header class="bg-white ring-2">
@@ -29,18 +87,42 @@
     <!-- Main Content: Hero Section -->
     <main class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-                Pioneering the Future of <span class="text-indigo-600">Sustainable Innovation</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6">
+                Tracking Tails
             </h1>
             <p class="text-xl text-gray-500 max-w-3xl mx-auto mb-10">
-                We bridge research and real-world application, driving meaningful change through collaboration and expert insights.
+                An Interdisciplinary Approach to Understanding Cultural and Environmental Factors in Canine Disease Transmission and Control
             </p>
             <a href="about.html" class="inline-block px-8 py-3 bg-indigo-600 text-white text-lg font-medium rounded-full shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
-                Discover Our Mission
+                Learn more
             </a>
-            <div class="mt-12">
-                <!-- Placeholder for a relevant visual or statistic -->
-                <img src="https://placehold.co/1200x500/818CF8/FFFFFF?text=Project+Showcase+Visual" alt="Placeholder image for project showcase" class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            
+            <!-- Slideshow Container -->
+            <div class="mt-12 rounded-xl shadow-2xl">
+                <div class="slideshow-container rounded-xl overflow-hidden">
+                    
+                    <!-- Slide 1: Simulating /images/showcase/slide1.jpg -->
+                    <div class="slide fade" data-slide-index="0">
+                        <img src="https://placehold.co/1200x500/A78BFA/FFFFFF?text=images/showcase/slide1.jpg+-+Global+Research" alt="Global Research Project">
+                    </div>
+
+                    <!-- Slide 2: Simulating /images/showcase/slide2.jpg -->
+                    <div class="slide fade" data-slide-index="1">
+                        <img src="https://placehold.co/1200x500/4F46E5/FFFFFF?text=images/showcase/slide2.jpg+-+Team+Collaboration" alt="Team Collaboration">
+                    </div>
+
+                    <!-- Slide 3: Simulating /images/showcase/slide3.jpg -->
+                    <div class="slide fade" data-slide-index="2">
+                        <img src="https://placehold.co/1200x500/6366F1/FFFFFF?text=images/showcase/slide3.jpg+-+Future+Technology" alt="Future Technology Showcase">
+                    </div>
+                </div>
+
+                <!-- Dots/Indicators -->
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </div>
         </div>
     </main>
@@ -52,5 +134,81 @@
         </div>
     </footer>
 
+    <script>
+        let slideIndex = 0;
+        let slideTimer;
+
+        // Utility function to display messages instead of alert()
+        function showMessage(msg, duration = 3000) {
+            const box = document.getElementById('messageBox');
+            box.textContent = msg;
+            box.style.opacity = '1';
+
+            setTimeout(() => {
+                box.style.opacity = '0';
+            }, duration);
+        }
+
+        // Main function to display slides
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            // Check if slides exist
+            if (slides.length === 0) {
+                showMessage("Error: Slideshow elements not found.");
+                return;
+            }
+
+            // Loop back to 1 if slideIndex exceeds number of slides
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+            
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            // Remove 'active-dot' class from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active-dot");
+            }
+
+            // Display the current slide and mark the current dot as active
+            slides[slideIndex].style.display = "block";  
+            dots[slideIndex].classList.add("active-dot");
+            
+            // Advance the index for the next automatic slide
+            slideIndex++;
+            
+            // Clear any existing timer and set a new one for auto-play
+            clearTimeout(slideTimer);
+            slideTimer = setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+
+        // Controls the current slide via dot navigation (1-based index)
+        function currentSlide(n) {
+            slideIndex = n - 1; // Convert 1-based input to 0-based internal index
+            showSlides();
+        }
+
+        // Start the slideshow when the window loads
+        window.onload = function() {
+            showSlides();
+        };
+
+        // Initialize the carousel logic when the document is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // This ensures showSlides runs even if window.onload fires late
+            if (slideIndex === 0) {
+                showSlides();
+            }
+        });
+    </script>
 </body>
 </html>

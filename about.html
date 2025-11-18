@@ -6,14 +6,31 @@
     <title>About Us - Project Nexus</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <style>
+        .map-pin {
+            position: absolute;
+            width: 1rem; /* 16px */
+            height: 1rem; /* 16px */
+            background-color: #FFBE98; /* Your accent color */
+            border-radius: 9999px; /* Full circle */
+            border: 3px solid #fff;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            transform: translate(-50%, -50%); /* Center the pin on the coordinate */
+            transition: all 0.2s ease-in-out;
+        }
+        .map-pin:hover {
+            background-color: #E8A982;
+            transform: translate(-50%, -50%) scale(1.2);
+            z-index: 10;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Responsive Header (NO SHADOW, LARGER FONT) -->
     <header class="bg-white">
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         
-        <!-- Logo -->
         <div class="flex lg:flex-1">
           <a href="index.html" class="-m-1.5 p-1.5">
             <span class="sr-only">Project Nexus</span>
@@ -21,7 +38,6 @@
           </a>
         </div>
         
-        <!-- Mobile Menu Button (Hamburger) -->
         <div class="flex lg:hidden">
           <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Open main menu</span>
@@ -31,16 +47,13 @@
           </button>
         </div>
         
-        <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex lg:gap-x-12">
           <a href="index.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Home</a>
-          <!-- Active Link -->
           <a href="about.html" class="text-base/6 font-semibold text-[#FFBE98] hover:text-[#E8A982]">About Us</a>
           <a href="activities.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Activities</a>
           <a href="press.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Press/Publications</a>
         </div>
         
-        <!-- Contact Button on Desktop -->
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="contact.html" class="rounded-full bg-[#FFBE98] px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-[#E8A982] transition duration-150">
             Contact Us
@@ -48,7 +61,6 @@
         </div>
       </nav>
 
-      <!-- Mobile Dialog Menu -->
       <el-dialog>
         <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
           <div tabindex="0" class="fixed inset-0 focus:outline-none">
@@ -68,7 +80,6 @@
               <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/10">
                   <div class="space-y-2 py-6">
-                    <!-- Mobile Links -->
                     <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
                     <a href="about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FFBE98] hover:bg-gray-50">About Us</a>
                     <a href="activities.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Activities</a>
@@ -85,11 +96,11 @@
       </el-dialog>
     </header>
 
-    <!-- Main Content: About Us -->
     <main class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-4">Our Vision and Team</h1>
-            <div class="grid md:grid-cols-2 gap-12">
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
                 <div>
                     <h2 class="text-3xl font-semibold text-[#FFBE98] mb-4">Who We Are</h2>
                     <p class="text-lg text-gray-600 mb-6">Project Nexus was founded on the principle that groundbreaking research should not remain confined to laboratories. We are a collective of scientists, engineers, and strategists dedicated to translating complex, theoretical concepts into tangible, sustainable solutions for the modern world.</p>
@@ -99,10 +110,148 @@
                     <img src="https://placehold.co/600x400/9ca3af/ffffff?text=Our+Team" alt="Image of the Project Nexus team collaborating" class="rounded-xl shadow-lg w-full h-auto object-cover">
                 </div>
             </div>
+
+            <div class="mb-16">
+                <h2 class="text-3xl font-semibold text-gray-900 mb-4 border-b pb-2">Project Synopsis</h2>
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-[#FFBE98] mb-3">Abstract</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">hello this is an abstract</p>
+                    <p class="text-sm text-gray-500 mt-4 italic">The synopsis will detail the foundational hypothesis, methodology, and expected global impact of Project Nexus initiatives.</p>
+                </div>
+            </div>
+
+            <div id="team-section">
+                <h2 class="text-3xl font-semibold text-gray-900 mb-8 border-b pb-2">Our Global Team and Partners</h2>
+                
+                <div class="relative w-full overflow-hidden bg-white p-4 rounded-xl shadow-lg mb-12" style="aspect-ratio: 16/9;">
+                    <h3 class="text-xl font-bold text-[#FFBE98] mb-3">Partner University Locations</h3>
+                    <img src="https://placehold.co/1200x675/e5e7eb/374151?text=World+Map+with+Highlighted+Countries" alt="World map showing partner locations" class="w-full h-auto object-contain rounded-lg">
+                    
+                    <div class="map-pin" style="left: 55%; top: 58%;" title="Uganda: Makerere University"></div>
+                    
+                    <div class="map-pin" style="left: 48%; top: 46%;" title="Chad: Université de N'Djaména"></div>
+                    
+                    <div class="map-pin" style="left: 73%; top: 50%;" title="India: IIT Bombay, IISc Bangalore"></div>
+                    
+                    <div class="map-pin" style="left: 49%; top: 35%;" title="Switzerland: ETH Zürich"></div>
+                    
+                    <div class="map-pin" style="left: 38%; top: 51%;" title="Côte d'Ivoire: Université Félix Houphouët-Boigny"></div>
+                    
+                    <div class="map-pin" style="left: 82%; top: 70%;" title="Indonesia: University of Indonesia"></div>
+
+                    <p class="mt-4 text-sm text-gray-500 italic">Hover over the orange pins to see the partner university names.</p>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">🇺🇬 Uganda Team (Makerere University)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+1" alt="Team Member 1" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Dr. Anya Kibirige</p>
+                            <p class="text-sm text-gray-600">Lead Researcher, Hydrology</p>
+                            <p class="text-sm text-gray-600">Makerere University</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+2" alt="Team Member 2" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Eng. Lwasa David</p>
+                            <p class="text-sm text-gray-600">Field Engineer</p>
+                            <p class="text-sm text-gray-600">Makerere University</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Team Member 3" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Ms. Namutebi Ruth</p>
+                            <p class="text-sm text-gray-600">Project Coordinator</p>
+                            <p class="text-sm text-gray-600">Makerere University</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">🇹🇩 Chad Team (Université de N'Djaména)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+4" alt="Team Member 4" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Prof. Hassan Gamar</p>
+                            <p class="text-sm text-gray-600">Renewable Energy Specialist</p>
+                            <p class="text-sm text-gray-600">Université de N'Djaména</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">🇮🇳 India Team (IIT Bombay, IISc Bangalore)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+5" alt="Team Member 5" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Dr. Kavita Sharma</p>
+                            <p class="text-sm text-gray-600">Material Science Lead</p>
+                            <p class="text-sm text-gray-600">IIT Bombay</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Team Member 6" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Prof. Anil Rao</p>
+                            <p class="text-sm text-gray-600">AI and Data Science</p>
+                            <p class="text-sm text-gray-600">IISc Bangalore</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">🇨🇭 Switzerland Team (ETH Zürich)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+7" alt="Team Member 7" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Dr. Markus Keller</p>
+                            <p class="text-sm text-gray-600">Project Director</p>
+                            <p class="text-sm text-gray-600">ETH Zürich</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">🇨🇮 Côte d'Ivoire Team (Université Félix Houphouët-Boigny)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+8" alt="Team Member 8" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Madame Aminata Diallo</p>
+                            <p class="text-sm text-gray-600">Policy Analyst</p>
+                            <p class="text-sm text-gray-600">Université Félix Houphouët-Boigny</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">🇮🇩 Indonesia Team (University of Indonesia)</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+9" alt="Team Member 9" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Dr. Budi Santoso</p>
+                            <p class="text-sm text-gray-600">Ecological Restoration</p>
+                            <p class="text-sm text-gray-600">University of Indonesia</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+10" alt="Team Member 10" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <p class="font-bold text-gray-900">Ms. Siti Rahayu</p>
+                            <p class="text-sm text-gray-600">Logistics and Outreach</p>
+                            <p class="text-sm text-gray-600">University of Indonesia</p>
+                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
             <p>&copy; 2025 Project Nexus. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>

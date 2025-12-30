@@ -3,226 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities - Project Nexus</title>
+    <title>Activities - Tracking Tails</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-    <!-- Use Inter font family for aesthetic consistency -->
+    <script src="https://cdn.jsdelivr.net/npm/preline@2.0.3/dist/preline.min.js"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body class="bg-white text-gray-800">
 
-    <!-- Responsive Header -->
     <header class="bg-white border-b border-gray-100">
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        
-        <!-- Logo -->
         <div class="flex lg:flex-1">
           <a href="index.html" class="-m-1.5 p-1.5">
-            <span class="sr-only">Project Nexus</span>
-            <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
+            <span class="sr-only">Tracking Tails</span>
+            <img src="images/logo_small.jpg" alt="Tracking Tails Logo" class="h-8 w-auto rounded-md" />
           </a>
         </div>
         
-        <!-- Mobile Menu Button (Hamburger) -->
-        <div class="flex lg:hidden">
-          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex lg:gap-x-12">
           <a href="index.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Home</a>
           <a href="about.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">About Us</a>
-          <!-- Active Link -->
-          <a href="activities.html" class="text-base/6 font-semibold text-[#FFBE98] hover:text-[#E8A982]">Activities</a>
+          <a href="activities.html" class="text-base/6 font-semibold text-[#FFBE98]">Activities</a>
           <a href="press.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Press/Publications</a>
         </div>
         
-        <!-- Contact Button on Desktop -->
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="contact.html" class="rounded-full bg-[#FFBE98] px-4 py-2 text-sm font-semibold text-white transition duration-150 border-2 border-transparent hover:bg-[#E8A982]">
+          <a href="contact.html" class="rounded-full bg-[#FFBE98] px-4 py-2 text-sm font-semibold text-white transition duration-150 hover:bg-[#E8A982]">
             Contact Us
           </a>
         </div>
       </nav>
-
-      <!-- Mobile Dialog Menu -->
-      <el-dialog>
-        <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-          <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div class="flex items-center justify-between">
-                <a href="index.html" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Project Nexus</span>
-                  <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
-                </a>
-                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                  <span class="sr-only">Close menu</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                  <div class="space-y-2 py-6">
-                    <!-- Mobile Links -->
-                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                    <a href="about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About Us</a>
-                    <a href="activities.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FFBE98] hover:bg-gray-50">Activities</a>
-                    <a href="press.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Press/Publications</a>
-                  </div>
-                  <div class="py-6">
-                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
-                  </div>
-                </div>
-              </div>
-            </el-dialog-panel>
-          </div>
-        </dialog>
-      </el-dialog>
     </header>
 
-    <!-- Main Content: Card Blog with Text Overlay -->
     <main class="py-16 md:py-24">
-        <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-            <!-- Title -->
+        <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto">
             <div class="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
                 <h1 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-4">Our Latest Activities & News</h1>
                 <p class="mt-1 text-gray-600">Discover how our research is making an impact across various fields.</p>
             </div>
-            <!-- End Title -->
 
-            <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14">
-                <!-- Card 1: Text Overlay Implementation -->
-                <a class="group relative flex flex-col h-[20rem] bg-white border border-gray-200 rounded-xl transition hover:border-[#FFBE98] focus:outline-none focus:border-[#FFBE98]" href="#">
-                    <!-- Image and Gradient Overlay -->
+                
+                <button type="button" data-hs-overlay="#hs-modal-1" class="group relative flex flex-col h-[20rem] bg-white border border-gray-200 rounded-xl transition overflow-hidden text-left">
                     <div class="absolute inset-0">
-                        <img class="w-full h-full object-cover rounded-xl" 
-                             src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" 
-                             alt="Blog Image"
-                             onerror="this.onerror=null; this.src='https://placehold.co/560x320/3b82f6/ffffff?text=Product+News';">
-                        <!-- Dark gradient for text readability -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent rounded-xl opacity-85 group-hover:opacity-95 transition"></div>
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?auto=format&fit=crop&w=560&q=80" alt="Blog Image">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-85 group-hover:opacity-95 transition"></div>
                     </div>
-                    <!-- Content (Foreground) -->
                     <div class="relative flex flex-col justify-end h-full p-4 md:p-5">
-                        <p class="text-xs uppercase font-semibold text-[#FFBE98]">
-                            Product
-                        </p>
-                        <h3 class="mt-2 text-xl font-medium text-white group-hover:text-[#E8A982] transition duration-150">
-                            Better is when everything works together
-                        </h3>
+                        <p class="text-xs uppercase font-semibold text-[#FFBE98]">Research Update</p>
+                        <h3 class="mt-2 text-xl font-medium text-white group-hover:text-[#E8A982] transition">Better is when everything works together</h3>
                     </div>
-                </a>
-                <!-- End Card 1 -->
+                </button>
 
-                <!-- Card 2: Text Overlay Implementation -->
-                <a class="group relative flex flex-col h-[20rem] bg-white border border-gray-200 rounded-xl transition hover:border-[#FFBE98] focus:outline-none focus:border-[#FFBE98]" href="#">
-                    <!-- Image and Gradient Overlay -->
-                    <div class="absolute inset-0">
-                        <img class="w-full h-full object-cover rounded-xl" 
-                             src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" 
-                             alt="Blog Image"
-                             onerror="this.onerror=null; this.src='https://placehold.co/560x320/f97316/ffffff?text=Business+Insights';">
-                        <!-- Dark gradient for text readability -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent rounded-xl opacity-85 group-hover:opacity-95 transition"></div>
-                    </div>
-                    <!-- Content (Foreground) -->
-                    <div class="relative flex flex-col justify-end h-full p-4 md:p-5">
-                        <p class="text-xs uppercase font-semibold text-[#FFBE98]">
-                            Business
-                        </p>
-                        <h3 class="mt-2 text-xl font-medium text-white group-hover:text-[#E8A982] transition duration-150">
-                            What CFR really is about
-                        </h3>
-                    </div>
-                </a>
-                <!-- End Card 2 -->
-
-                <!-- Card 3: Text Overlay Implementation -->
-                <a class="group relative flex flex-col h-[20rem] bg-white border border-gray-200 rounded-xl transition hover:border-[#FFBE98] focus:outline-none focus:border-[#FFBE98]" href="#">
-                    <!-- Image and Gradient Overlay -->
-                    <div class="absolute inset-0">
-                        <img class="w-full h-full object-cover rounded-xl" 
-                             src="https://images.unsplash.com/photo-1668863699009-1e3b4118675d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" 
-                             alt="Blog Image"
-                             onerror="this.onerror=null; this.src='https://placehold.co/560x320/10b981/ffffff?text=Strategy';">
-                        <!-- Dark gradient for text readability -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent rounded-xl opacity-85 group-hover:opacity-95 transition"></div>
-                    </div>
-                    <!-- Content (Foreground) -->
-                    <div class="relative flex flex-col justify-end h-full p-4 md:p-5">
-                        <p class="text-xs uppercase font-semibold text-[#FFBE98]">
-                            Strategy
-                        </p>
-                        <h3 class="mt-2 text-xl font-medium text-white group-hover:text-[#E8A982] transition duration-150">
-                            Should Product Owners think like entrepreneurs?
-                        </h3>
-                    </div>
-                </a>
-                <!-- End Card 3 -->
-
-                <!-- Card 4: Text Overlay Implementation -->
-                <a class="group relative flex flex-col h-[20rem] bg-white border border-gray-200 rounded-xl transition hover:border-[#FFBE98] focus:outline-none focus:border-[#FFBE98]" href="#">
-                    <!-- Image and Gradient Overlay -->
-                    <div class="absolute inset-0">
-                        <img class="w-full h-full object-cover rounded-xl" 
-                             src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" 
-                             alt="Blog Image"
-                             onerror="this.onerror=null; this.src='https://placehold.co/560x320/ef4444/ffffff?text=Facilitation';">
-                        <!-- Dark gradient for text readability -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent rounded-xl opacity-85 group-hover:opacity-95 transition"></div>
-                    </div>
-                    <!-- Content (Foreground) -->
-                    <div class="relative flex flex-col justify-end h-full p-4 md:p-5">
-                        <p class="text-xs uppercase font-semibold text-[#FFBE98]">
-                            Facilitate
-                        </p>
-                        <h3 class="mt-2 text-xl font-medium text-white group-hover:text-[#E8A982] transition duration-150">
-                            Announcing Front Strategies: Ready-to-use rules
-                        </h3>
-                    </div>
-                </a>
-                <!-- End Card 4 -->
-            </div>
-            <!-- End Grid -->
-
-            <!-- Card Link (No Shadow, Updated Link) -->
-            <div class="text-center">
-                <div class="inline-block bg-white border border-gray-200 rounded-full">
-                    <div class="py-3 px-4 flex items-center gap-x-2">
-                        <p class="text-gray-600">
-                            Want to read more?
-                        </p>
-                        <!-- Updated URL to LinkedIn -->
-                        <a class="inline-flex items-center gap-x-1.5 text-[#FFBE98] decoration-2 hover:underline focus:outline-hidden focus:underline font-medium" 
-                           href="https://www.linkedin.com/company/tracking-tails"
-                           target="_blank">
-                            Go here
-                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                        </a>
-                    </div>
                 </div>
+
+            <div class="text-center">
+                <a class="inline-flex items-center gap-x-1.5 text-[#FFBE98] hover:underline font-medium" href="https://www.linkedin.com/company/tracking-tails" target="_blank">
+                    Read more on LinkedIn <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
-            <!-- End Card Link -->
         </div>
-        <!-- End Card Blog -->
     </main>
 
-    <!-- Footer -->
+    <div id="hs-modal-1" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+      <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-4xl sm:w-full m-3 sm:mx-auto">
+        <div class="flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto">
+          <div class="flex justify-end items-center py-3 px-4">
+            <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none" data-hs-overlay="#hs-modal-1">
+              <span class="sr-only">Close</span>
+              <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+          </div>
+
+          <div class="p-4 sm:p-10 overflow-y-auto">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex items-center gap-x-3 mb-6">
+                    <img class="size-12 rounded-full" src="https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Author">
+                    <div>
+                        <span class="block font-semibold text-gray-800">Leyla Ludic</span>
+                        <span class="block text-xs text-gray-500">Jan 18 • 8 min read</span>
+                    </div>
+                </div>
+
+                <div class="space-y-5 md:space-y-8">
+                    <h2 class="text-2xl font-bold md:text-3xl text-gray-900">Announcing a free plan for small teams</h2>
+                    <p class="text-lg text-gray-800">Our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow.</p>
+                    
+                    <figure>
+                        <img class="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1670272505340-d906d8d77d03?auto=format&fit=crop&w=560&q=80" alt="Blog Image">
+                        <figcaption class="mt-3 text-sm text-center text-gray-500">Research field work in Uganda.</figcaption>
+                    </figure>
+
+                    <p class="text-lg text-gray-800">As we've grown, we've seen how interdisciplinary collaboration brings designers and researchers closer together to create amazing things.</p>
+
+                    <blockquote class="text-center p-4 sm:px-7 border-l-4 border-[#FFBE98] bg-gray-50">
+                        <p class="text-xl font-medium text-gray-800 italic">"This research changes how we approach disease control in community settings."</p>
+                    </blockquote>
+                </div>
+
+                <div class="mt-10 flex flex-wrap gap-2">
+                    <span class="py-1.5 px-3 rounded-full text-xs bg-gray-100 text-gray-800">Epidemiology</span>
+                    <span class="py-1.5 px-3 rounded-full text-xs bg-gray-100 text-gray-800">Public Health</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer class="bg-white mt-12 py-8 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 Project Nexus. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>
+            <p>&copy; 2025 Tracking Tails. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>
         </div>
     </footer>
 </body>

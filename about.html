@@ -6,41 +6,22 @@
     <title>About Us - Tracking Tails</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-    
-    <style>
-        .map-pin {
-            position: absolute;
-            width: 1rem; /* 16px */
-            height: 1rem; /* 16px */
-            background-color: #FFBE98; /* Your accent color */
-            border-radius: 9999px; /* Full circle */
-            border: 3px solid #fff;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            transform: translate(-50%, -50%); /* Center the pin on the coordinate */
-            transition: all 0.2s ease-in-out;
-        }
-        .map-pin:hover {
-            background-color: #E8A982;
-            transform: translate(-50%, -50%) scale(1.2);
-            z-index: 10;
-        }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <header class="bg-white">
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        
         <div class="flex lg:flex-1">
           <a href="index.html" class="-m-1.5 p-1.5">
-            <span class="sr-only">Tracking Tails</span> <img src="images/logo_small.jpg" alt="Tracking Tails Logo" class="h-8 w-auto rounded-md" /> </a>
+            <span class="sr-only">Tracking Tails</span> 
+            <img src="images/logo_small.jpg" alt="Tracking Tails Logo" class="h-8 w-auto rounded-md" /> 
+          </a>
         </div>
         
         <div class="flex lg:hidden">
           <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6">
               <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
@@ -59,40 +40,6 @@
           </a>
         </div>
       </nav>
-
-      <el-dialog>
-        <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-          <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div class="flex items-center justify-between">
-                <a href="index.html" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Tracking Tails</span>
-                  <img src="images/logo_small.jpg" alt="Tracking Tails Logo" class="h-8 w-auto rounded-md" />
-                </a>
-                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                  <span class="sr-only">Close menu</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                  <div class="space-y-2 py-6">
-                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                    <a href="about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FFBE98] hover:bg-gray-50">About Us</a>
-                    <a href="activities.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Activities</a>
-                    <a href="press.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Press/Publications</a>
-                  </div>
-                  <div class="py-6">
-                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
-                  </div>
-                </div>
-              </div>
-            </el-dialog-panel>
-          </div>
-        </dialog>
-      </el-dialog>
     </header>
 
     <main class="py-16 md:py-24">
@@ -102,7 +49,7 @@
             <div class="grid md:grid-cols-2 gap-12 mb-16">
                 <div>
                     <h2 class="text-3xl font-semibold text-[#FFBE98] mb-4">Scientific Summary</h2>
-                    <p class="text-lg text-gray-600 mb-6">Domestic dogs (Canis familiaris) bring a lot of benefits, but can carry and transmit diseases that pose significant health risks to both animals and humans worldwide. Understanding how dogs move, both within and between communities, is essential to controlling the spread of these diseases. This interdisciplinary and multinational research project explores dog movement in Uganda, Chad, India, and Indonesia, examining how it is influenced by human behavior and how these patterns contribute to disease transmission. To ensure that disease control strategies are effective, they must be adapted to the specific cultural, environmental, and social contexts in which they are implemented.</p>
+                    <p class="text-lg text-gray-600 mb-6">Domestic dogs (<em>Canis familiaris</em>) bring a lot of benefits, but can carry and transmit diseases that pose significant health risks to both animals and humans worldwide. Understanding how dogs move, both within and between communities, is essential to controlling the spread of these diseases. This interdisciplinary and multinational research project explores dog movement in Uganda, Chad, India, and Indonesia, examining how it is influenced by human behavior and how these patterns contribute to disease transmission. To ensure that disease control strategies are effective, they must be adapted to the specific cultural, environmental, and social contexts in which they are implemented.</p>
                     <p class="text-lg text-gray-600">Bringing together expertise from four institutes in veterinary epidemiology, social anthropology, genetics, and mathematical modeling, the project investigates the links between dog movement and disease dynamics. The research team collects data on dog behavior, health, and care practices using tools such as GPS tracking, pathogen screening, genetic analysis, and social research. Working closely with local academic partners and communities, the project aims to develop advanced models to simulate disease spread and assess both the effectiveness and local acceptability of different disease control strategies.</p>
                 </div>
                 <div>
@@ -111,252 +58,83 @@
             </div>
 
             <div id="team-section">
-                <h2 class="text-3xl font-semibold text-gray-900 mb-8 border-b pb-2">Our Team</h2>
-                
-                <h3 class="text-xl font-bold text-[#FFBE98] mb-3">Partner University Locations</h3>
-                <div class="relative w-full mb-12" style="aspect-ratio: 16/9;">
-                    <img src="images/MapChart_Map.png" alt="World map showing partner locations" class="w-full h-auto object-contain rounded-lg">
-                    
-                    <div class="map-pin" style="left: 55%; top: 58%;" title="Uganda: Makerere University"></div>
-                    <div class="map-pin" style="left: 48%; top: 46%;" title="Chad: Université de N'Djaména"></div>
-                    <div class="map-pin" style="left: 73%; top: 50%;" title="India: Indian Institute of Technology"></div>
-                    <div class="map-pin" style="left: 49%; top: 35%;" title="Switzerland: University of Bern & Swiss TPH"></div>
-                    <div class="map-pin" style="left: 38%; top: 51%;" title="Côte d'Ivoire: Centre Suisse de Recherches Scientifiques"></div>
-                    <div class="map-pin" style="left: 82%; top: 70%;" title="Indonesia: University of Indonesia"></div>
-
-                    <p class="mt-4 text-sm text-gray-500 italic">Hover over the orange pins to see the partner university names.</p>
-                </div>
+                <h2 class="text-3xl font-semibold text-[#FFBE98] mb-8 border-b pb-2">Our Team</h2>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">Switzerland</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-[#FFBE98] pl-4">Switzerland</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+1" alt="Salome Duerr" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Salome" alt="Salome Duerr" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Prof. Dr. Salome Duerr</p>      
                             <p class="text-sm text-gray-600">Principal Investigator</p> 
-                            <p class="text-sm text-gray-600">Veterinary Public Health Institute</p> 
                             <p class="text-sm text-gray-600">University of Bern</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a> 
                         </div>
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+2" alt="Gerald Heckel" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Gerald" alt="Gerald Heckel" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Prof. Dr. Gerald Heckel</p>
                             <p class="text-sm text-gray-600">Principal Investigator</p>
-                            <p class="text-sm text-gray-600">Instite for Ecology and Evolution</p>
                             <p class="text-sm text-gray-600">University of Bern</p> 
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
                         </div>
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Nakul Chitnis" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Nakul" alt="Nakul Chitnis" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Prof. Dr. Nakul Chitnis</p>
                             <p class="text-sm text-gray-600">Principal Investigator</p>
-                            <p class="text-sm text-gray-600">Swiss Tropical and Public Health Institute</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                            <p class="text-sm text-gray-600">Swiss TPH</p>
                         </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Silja Griss" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Dr. Silja Griss</p>
-                            <p class="text-sm text-gray-600">Postdoctoral Researcher</p>
-                            <p class="text-sm text-gray-600">Veterinary Public Health Institute</p> 
-                            <p class="text-sm text-gray-600">University of Bern</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Caroline Mburu" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Dr. Inez Derkx</p>
-                            <p class="text-sm text-gray-600">Postdoctoral Researcher</p>
-                            <p class="text-sm text-gray-600">Swiss Tropical and Public Health Institute</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Johanna Kann" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Johanna Kann</p>
-                            <p class="text-sm text-gray-600">Doctoral Researcher</p>
-                            <p class="text-sm text-gray-600">Instite for Ecology and Evolution</p>
-                            <p class="text-sm text-gray-600">University of Bern</p> 
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Ayrin Piephoh" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Ayrin Piephoh</p>
-                            <p class="text-sm text-gray-600">Doctoral Researcher</p>
-                            <p class="text-sm text-gray-600">Veterinary Public Health Institute</p> 
-                            <p class="text-sm text-gray-600">University of Bern</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>  
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Jolanda Paganoni-Zurbruegg" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Jolanda Paganoni-Zurbruegg</p>
-                            <p class="text-sm text-gray-600">Project Coordinator</p>
-                            <p class="text-sm text-gray-600">Veterinary Public Health Institute</p> 
-                            <p class="text-sm text-gray-600">University of Bern</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div> 
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Daria Hofer" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Daria Hofer</p>
-                            <p class="text-sm text-gray-600">Project Coordinator</p>
-                            <p class="text-sm text-gray-600">Swiss Tropical and Public Health Institute</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div> 
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">Cote D'Ivoire</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-[#FFBE98] pl-4">Cote D'Ivoire</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Kathrin Heitz-Topka" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Kathrin" alt="Kathrin Heitz-Topka" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Dr. Kathrin Heitz-Topka</p>
-                            <p class="text-sm text-gray-600">Principal Investigator</p>
                             <p class="text-sm text-gray-600">Centre Suisse de Recherches Scientifiques</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
                         </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+3" alt="Caroline Mburu" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Dr. Caroline Mburu</p>
-                            <p class="text-sm text-gray-600">Postdoctoral Researcher</p>
-                            <p class="text-sm text-gray-600">Centre Suisse de Recherches Scientifiques</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div> 
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">Chad</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-[#FFBE98] pl-4">Chad</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+4" alt="Team Member 4" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Fayiz" alt="Fayiz Abakar Alhilou" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Prof. Fayiz Abakar Alhilou</p>
-                            <p class="text-sm text-gray-600">Local Investigator</p>
-                            <p class="text-sm text-gray-600">Institut National de Santé Publique du Tchad</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+4" alt="Team Member 4" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Jean Mbaipago</p>
-                            <p class="text-sm text-gray-600">Doctoral Researcher</p>
-                            <p class="text-sm text-gray-600">Centre Suisse de Recherches Scientifiques</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                            <p class="text-sm text-gray-600">Institut National de Santé Publique</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">Uganda</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-[#FFBE98] pl-4">Uganda</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+5" alt="Terrence Odoch" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Terence" alt="Terence Odoch" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Dr. Terence Odoch</p>
-                            <p class="text-sm text-gray-600">Principal Investigator Uganda</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
                             <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
                         </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Clovice Kankya" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Prof. Clovice Kankya</p>
-                            <p class="text-sm text-gray-600">Principal Investigator Uganda</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Lordrick Alinaitwe" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Dr. Lordrick Alinaitwe</p>
-                            <p class="text-sm text-gray-600">Lab responsible</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Lois Nagagya" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Dr. Sam Okech</p>
-                            <p class="font-bold text-gray-900">Project Collaborator</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Juliet Kiguli" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Dr. Juliet Kiguli</p>
-                            <p class="font-bold text-gray-900">Project Collaborator</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Felix Opio" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Felix Opio</p>
-                            <p class="font-bold text-gray-900">Project Associate</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="John Paul Nagalila" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">John Paul Nagalila</p>
-                            <p class="font-bold text-gray-900">Project Associate</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Faridah Nalubwama" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Faridah Nalubwama</p>
-                            <p class="font-bold text-gray-900">Masters student</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Martha Taremwa" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Martha Taremwa</p>
-                            <p class="font-bold text-gray-900">Masters student</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Rose Ayebare" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Rose Ayebare</p>
-                            <p class="font-bold text-gray-900">Project Coordinator</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                        </div>
-                        <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+6" alt="Lois Nagagya" class="w-32 h-32 rounded-full object-cover mb-4">
-                            <p class="font-bold text-gray-900">Lois Nagagya</p>
-                            <p class="font-bold text-gray-900">Project Coordinator</p>
-                            <p class="text-sm text-gray-600">College of Veterinary Medicine, Animal Resources and Biosecurity</p>
-                            <p class="text-sm text-gray-600">Makerere University</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
-                         </div>
                     </div>
                 </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6"> India </h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-[#FFBE98] pl-4">India</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+7" alt="Harisch Tiwari" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Harisch" alt="Harisch Tiwari" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Dr. Harisch Tiwari</p>
-                            <p class="text-sm text-gray-600">Principal Investigator India</p>
-                            <p class="text-sm text-gray-600">Indian Institute of Technology, Guwahati</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
+                            <p class="text-sm text-gray-600">IIT Guwahati</p>
                         </div>
                     </div>
-                </di>
+                </div>
 
                 <div class="mb-12">
-                    <h3 class="text-2xl font-bold text-[#FFBE98] mb-6">Indonesia</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-[#FFBE98] pl-4">Indonesia</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Photo+9" alt="Ewaldus Vera" class="w-32 h-32 rounded-full object-cover mb-4">
+                            <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Ewaldus" alt="Ewaldus Vera" class="w-32 h-32 rounded-full object-cover mb-4">
                             <p class="font-bold text-gray-900">Dr. Ewaldus Wera</p>
                             <p class="text-sm text-gray-600">Kupang State Agricultural Polytechnic</p>
-                            <a href="#" class="text-sm text-[#FFBE98] hover:text-[#E8A982] mt-1 font-medium">Website</a>
                         </div>
                     </div>
                 </div>

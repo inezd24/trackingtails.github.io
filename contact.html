@@ -3,35 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Project Nexus</title>
+    <title>Contact Us - Tracking Tails</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Responsive Header (NO SHADOW, LARGER FONT) -->
     <header class="bg-white">
       <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        
-        <!-- Logo -->
         <div class="flex lg:flex-1">
           <a href="index.html" class="-m-1.5 p-1.5">
-            <span class="sr-only">Project Nexus</span>
-            <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
+            <span class="sr-only">Tracking Tails</span> 
+            <img src="images/logo_small.jpg" alt="Tracking Tails Logo" class="h-8 w-auto rounded-md" /> 
           </a>
         </div>
         
-        <!-- Mobile Menu Button (Hamburger) -->
-        <div class="flex lg:hidden">
-          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Desktop Navigation Links -->
         <div class="hidden lg:flex lg:gap-x-12">
           <a href="index.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Home</a>
           <a href="about.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">About Us</a>
@@ -39,91 +24,67 @@
           <a href="press.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Press/Publications</a>
         </div>
         
-        <!-- Contact Button on Desktop (Active link styling) -->
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="contact.html" class="rounded-full bg-[#FFBE98] px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-[#E8A982] transition duration-150">
             Contact Us
           </a>
         </div>
       </nav>
-
-      <!-- Mobile Dialog Menu -->
-      <el-dialog>
-        <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-          <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div class="flex items-center justify-between">
-                <a href="index.html" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Project Nexus</span>
-                  <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
-                </a>
-                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                  <span class="sr-only">Close menu</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                  <div class="space-y-2 py-6">
-                    <!-- Mobile Links -->
-                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                    <a href="about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About Us</a>
-                    <a href="activities.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Activities</a>
-                    <a href="press.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Press/Publications</a>
-                  </div>
-                  <div class="py-6">
-                    <!-- Mobile Contact is the login link in this structure, but we'll highlight it if we treat it as Contact Us -->
-                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-[#FFBE98] hover:bg-gray-50">Contact Us</a>
-                  </div>
-                </div>
-              </div>
-            </el-dialog-panel>
-          </div>
-        </dialog>
-      </el-dialog>
     </header>
 
-    <!-- Main Content: Contact Us -->
     <main class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-4">Get in Touch</h1>
-            <div class="grid md:grid-cols-3 gap-12 bg-white p-8 rounded-xl shadow-lg">
-                <div class="col-span-1">
-                    <h2 class="text-2xl font-semibold text-[#FFBE98] mb-4">Contact Information</h2>
-                    <p class="text-gray-600 mb-2"><strong>Email:</strong> info@projectnexus.com</p>
-                    <p class="text-gray-600 mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
-                    <p class="text-gray-600"><strong>Address:</strong> 100 Innovation Drive, Suite 500, Tech City, 90210</p>
-                </div>
-                <div class="md:col-span-2">
-                    <h2 class="text-2xl font-semibold text-[#FFBE98] mb-4">Send Us a Message</h2>
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FFBE98] focus:ring-[#FFBE98] p-2">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-4">Contact Us</h1>
+            
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-12">
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#FFBE98] mb-6">VPHI Bern</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-gray-500">Address</h3>
+                                <p class="text-lg text-gray-700 mt-1">
+                                    Veterinary Public Health Institute (VPHI)<br>
+                                    University of Bern<br>
+                                    Schwarzenburgstrasse 161<br>
+                                    3097 Liebefeld, Switzerland
+                                </p>
+                            </div>
+                            
+                            <div class="pt-4">
+                                <h3 class="text-sm font-bold uppercase tracking-wider text-gray-500">Email</h3>
+                                <p class="text-lg mt-1">
+                                    <a href="mailto:info.vphi@unibe.ch" class="text-gray-700 hover:text-[#FFBE98] transition-colors">
+                                        info.vphi@unibe.ch
+                                    </a>
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FFBE98] focus:ring-[#FFBE98] p-2">
+                    </div>
+
+                    <div class="flex flex-col justify-center border-t md:border-t-0 md:border-l border-gray-100 pt-8 md:pt-0 md:pl-12">
+                        <p class="text-gray-600 italic">
+                            For specific inquiries regarding the Tracking Tails research project, please contact our coordinating team at the VPHI.
+                        </p>
+                        <div class="mt-6">
+                            <a href="https://www.vphi.unibe.ch/" target="_blank" class="inline-flex items-center text-sm font-semibold text-[#FFBE98] hover:text-[#E8A982]">
+                                Visit VPHI Website
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FFBE98] focus:ring-[#FFBE98] p-2"></textarea>
-                        </div>
-                        <button type="submit" class="w-full sm:w-auto px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[#FFBE98] hover:bg-[#E8A982] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFBE98] transition duration-150">
-                            Submit Inquiry
-                        </button>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 Project Nexus. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>
+            <p>&copy; 2025 Tracking Tails. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>
         </div>
     </footer>
 </body>

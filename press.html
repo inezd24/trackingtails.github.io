@@ -9,80 +9,25 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Responsive Header (NO SHADOW, LARGER FONT) -->
-    <header class="bg-white">
-      <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        
-        <!-- Logo -->
-        <div class="flex lg:flex-1">
-          <a href="index.html" class="-m-1.5 p-1.5">
-            <span class="sr-only">Project Nexus</span>
-            <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
-          </a>
-        </div>
-        
-        <!-- Mobile Menu Button (Hamburger) -->
-        <div class="flex lg:hidden">
-          <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-              <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Desktop Navigation Links -->
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="index.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Home</a>
-          <a href="about.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">About Us</a>
-          <a href="activities.html" class="text-base/6 font-semibold text-gray-900 hover:text-[#FFBE98]">Activities</a>
-          <!-- Active Link -->
-          <a href="press.html" class="text-base/6 font-semibold text-[#FFBE98] hover:text-[#E8A982]">Press/Publications</a>
-        </div>
-        
-        <!-- Contact Button on Desktop -->
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="contact.html" class="rounded-full bg-[#FFBE98] px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-[#E8A982] transition duration-150">
-            Contact Us
-          </a>
-        </div>
-      </nav>
-
-      <!-- Mobile Dialog Menu -->
-      <el-dialog>
-        <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-          <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-              <div class="flex items-center justify-between">
+    <header class="bg-transparent w-full z-50">
+        <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+            <div class="flex lg:flex-1">
                 <a href="index.html" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Project Nexus</span>
-                  <img src="https://placehold.co/100x32/1e3a8a/ffffff?text=Nexus" alt="Project Nexus Logo" class="h-8 w-auto rounded-md" />
+                    <img src="images/logo_small.jpg" alt="Tracking Tails Logo" class="h-8 w-auto rounded-md" />
                 </a>
-                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                  <span class="sr-only">Close menu</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
-                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </button>
-              </div>
-              <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-gray-500/10">
-                  <div class="space-y-2 py-6">
-                    <!-- Mobile Links -->
-                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                    <a href="about.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About Us</a>
-                    <a href="activities.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Activities</a>
-                    <a href="press.html" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-[#FFBE98] hover:bg-gray-50">Press/Publications</a>
-                  </div>
-                  <div class="py-6">
-                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Log in</a>
-                  </div>
-                </div>
-              </div>
-            </el-dialog-panel>
-          </div>
-        </dialog>
-      </el-dialog>
+            </div>
+            
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="index.html" class="text-base font-semibold text-gray-900 hover:underline hover:text-[#b88669] decoration-2 underline-offset-8 transition">Home</a>
+                <a href="about.html" class="text-base font-semibold text-gray-900 hover:underline hover:text-[#b88669] decoration-2 underline-offset-8 transition">About Us</a>
+                <a href="activities.html" class="text-base font-semibold text-gray-900 hover:underline hover:text-[#b88669] decoration-2 underline-offset-8 transition">Activities</a>
+                <a href="press.html" class="text-base font-semibold text-gray-900 hover:underline hover:text-[#b88669] decoration-2 underline-offset-8 transition">Press & Publications</a>
+            </div>
+            
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="contact.html" class="rounded-full bg-[#b88669] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#E8A982]">Contact Us</a>
+            </div>
+        </nav>
     </header>
 
     <!-- Main Content: Press/Publications -->
@@ -92,28 +37,28 @@
             <div class="space-y-8">
                 <!-- Press Release 1 -->
                 <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <p class="text-sm text-[#FFBE98] mb-2">October 25, 2025 | Press Release</p>
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">Project Nexus Secures \$50M Funding for Quantum Materials Research</h2>
-                    <p class="text-gray-600">A major milestone achieved as leading venture capitalists invest in our disruptive quantum materials division, accelerating development timelines by two years.</p>
-                    <a href="#" class="mt-4 inline-block text-sm font-medium text-[#FFBE98] hover:text-[#E8A982]">Read the Full Announcement &rarr;</a>
+                    <p class="text-sm text-[#b88669] mb-2">October 16, 2025 | Press </p>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">Tracking Tails in the Umoja Standard</h2>
+                    <p class="text-gray-600">Tracking Trails: Makerere University Launches Groundbreaking Project to Combat Rabies and Study Free-Roaming Dogs in Uganda.</p>
+                    <a href="https://umojastandard.com/2025/10/16/tracking-trails-mak-launches-groundbreaking-project-to-combat-rabies-and-study-free-roaming-dogs-in-uganda/" class="mt-4 inline-block text-sm font-medium text-[#b88669] hover:text-[#E8A982]">Read the Full Article &rarr;</a>
                 </article>
 
                 <!-- Publication 1 -->
                 <article class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <p class="text-sm text-[#FFBE98] mb-2">September 1, 2025 | Journal Article</p>
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">Paper on Bio-Integrated Composites Published in Nature Sustainability</h2>
-                    <p class="text-gray-600">Our latest research detailing self-healing, bio-integrated composite materials has been published, setting a new standard for sustainable manufacturing.</p>
-                    <a href="#" class="mt-4 inline-block text-sm font-medium text-[#FFBE98] hover:text-[#E8A982]">View Abstract &rarr;</a>
+                    <p class="text-sm text-[#b88669] mb-2">September 1, 2025 | Press </p>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">Tracking Tails on UBC Uganda Live</h2>
+                    <p class="text-gray-600"> Health Ministry, Makerere Partner in Rabies Prevention Initiative | Tracking Dog Trails</p>
+                    <a href="https://www.youtube.com/watch?v=D3kbKGkyJBA" class="mt-4 inline-block text-sm font-medium text-[#b88669] hover:text-[#E8A982]">View Abstract &rarr;</a>
                 </article>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white mt-12 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 Project Nexus. All rights reserved. | <a href="contact.html" class="text-[#FFBE98] hover:underline">Get in Touch</a></p>
+            <p>&copy; 2025 Tracking Tails. All rights reserved. | <a href="contact.html" class="text-[#b88669] hover:underline">Get in Touch</a></p>
         </div>
     </footer>
 </body>
 </html>
+
